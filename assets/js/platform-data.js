@@ -1,4 +1,5 @@
 ---
+layout: null
 permalink: /assets/js/platform-data.js
 ---
 // Platform data generated from YAML at build time
