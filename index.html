@@ -19,12 +19,9 @@ description: "VFX Reference Platform - Reference Platform for VFX Software"
 
 <p class="mb-4">The Calendar Year {{ current_year }} (CY{{ current_year }}) Reference Platform is the target for all major software releases in {{ current_year }}.</p>
 
-{% assign current_platform = site.data.platforms["CY" | append: current_year] %}
-<p class="mb-4">
-  <strong>{{ current_platform.last_updated }}</strong> - CY{{ current_year }} is now {{ current_platform.status | capitalize }} and will be effective from January 1st. All package versions called out by the platform are now released. In 2021, the Imath library was split off from the OpenEXR 3 release into its own separately released package. Since Imath types are part of the OpenEXR API/ABI (as well other libraries such as Alembic), the OpenEXR / Imath maintainers have requested that the VFX Platform call out a specific, compatible version of Imath to avoid ambiguity.
-</p>
+{% include status-updates.html limit=5 %}
 
-<p class="mb-8">
+<p class="mt-6 mb-8">
   <a href="/platform_history.html#previous-status-updates" class="text-sm text-blue-600 dark:text-blue-400 hover:underline">Previous status updates...</a>
 </p>
 
