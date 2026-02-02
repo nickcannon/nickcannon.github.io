@@ -63,6 +63,4 @@ description: "VFX Reference Platform - Historical platform versions from CY2014 
 
 <h2 class="text-2xl font-semibold mb-6" id="additional-notes">Additional Notes</h2>
 
-{% for note in site.data.notes.notes %}
-  {% include note-card.html note=note %}
-{% endfor %}
+{% include filtered-notes.html years=history_years %}

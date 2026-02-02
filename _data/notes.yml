@@ -1,6 +1,7 @@
 notes:
   - id: footnote-macos
     title: "Notes - macOS"
+    from_year: 2018
     content: |
       **Minimum Deployment Target in Xcode**
 
@@ -28,6 +29,8 @@ notes:
 
   - id: footnote-gcc9
     title: "Note - gcc 9 and 11"
+    from_year: 2021
+    to_year: 2024
     content: |
       For users of Red Hat Enterprise Linux and RHEL-derived Linux distributions (such as CentOS Linux and Rocky Linux), the [Redhat Developer Toolset (DTS)](https://developers.redhat.com/products/developertoolset/overview) offers gcc and other build tooling that provide increased compatibility and it is used by many software vendors and studios. [DTS 9.1](https://access.redhat.com/documentation/en-us/red_hat_developer_toolset/9/html/9.1_release_notes/index) provides gcc 9.3.1 for compatibility with CY2021, and [DTS 11.0](https://access.redhat.com/documentation/en-us/red_hat_developer_toolset/11/html/11.0_release_notes/index) provides gcc 11.2.1 for compatibility with CY2023.
 
@@ -39,6 +42,8 @@ notes:
 
   - id: footnote-gcc6
     title: "Note - gcc 6"
+    from_year: 2018
+    to_year: 2020
     content: |
       **UPDATE: May 10th 2020** - Redhat DTS 6.1 is no longer actively supported so availability may be limited. More information available on [this vfx-platform-discuss thread](https://groups.google.com/forum/#!topic/vfx-platform-discuss/_-_CPw1fD3c).
 
@@ -57,6 +62,8 @@ notes:
 
   - id: footnote-gcc
     title: "Note - gcc 4"
+    from_year: 2014
+    to_year: 2017
     content: |
       The vanilla gcc 4.8.2 has a [serious bug](https://gcc.gnu.org/bugzilla/show_bug.cgi?id=58800) that was fixed in 4.8.3 and some Linux distribution vendors actually ship a patched version as 4.8.2. The reason the Platform gave 4.8.2 as an option for CY2016 is that this gcc version is what ships with [Redhat Developer Toolset 2.1](http://developerblog.redhat.com/2014/03/12/rh-dts2-1-ga/) that some software vendors were committed to using through 2016.
 
@@ -64,6 +71,8 @@ notes:
 
   - id: footnote-python3
     title: "Note - Python 3"
+    from_year: 2019
+    to_year: 2020
     content: |
       The move to Python 3 was delayed from CY2019 to CY2020 due to:
 
@@ -74,6 +83,8 @@ notes:
 
   - id: footnote-qt
     title: "Note - Qt modifications"
+    from_year: 2016
+    to_year: 2018
     content: |
       The major change for CY2016 was a move to Qt 5 which required a port of PySide and modifications to vanilla Qt. In November 2015 CY2016 version of Qt was upped from 5.5.x to 5.6.x with agreement from the community that it was preferable to align with a Long Term Support release. In May 2016 it was updated again to 5.6.1 to incorporate some critical bug fixes.
 
@@ -83,6 +94,8 @@ notes:
 
   - id: footnote-tbb
     title: "Note - Intel TBB"
+    from_year: 2020
+    to_year: 2024
     content: |
       There is [a known issue compiling TBB 2020 with MSVC 2017](https://github.com/oneapi-src/oneTBB/issues/274) that can be resolved with [this workaround](https://github.com/oneapi-src/oneTBB/pull/299).
 
