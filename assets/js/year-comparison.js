@@ -78,9 +78,10 @@
   }
 
   // Determine diff type
+  // val1 is from year1 (newer), val2 is from year2 (older)
   function getDiffType(val1, val2) {
-    if (!val1) return 'added';
-    if (!val2) return 'removed';
+    if (!val1) return 'removed';  // Missing in newer year = removed
+    if (!val2) return 'added';    // Missing in older year = added
     return 'changed';
   }
 
