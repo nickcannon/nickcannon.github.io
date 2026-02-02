@@ -53,6 +53,10 @@
     @apply bg-red-100 dark:bg-red-900/30;
   }
 
+  .diff-unchanged td:not([rowspan]) {
+    /* No special styling - inherits default */
+  }
+
   /* Year cards for history page */
   .year-card {
     @apply border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden;

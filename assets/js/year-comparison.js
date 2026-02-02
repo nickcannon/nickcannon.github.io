@@ -60,17 +60,15 @@
         const str1 = val1 || '';
         const str2 = val2 || '';
 
-        if (str1 !== str2) {
-          diffs.push({
-            category: category.name,
-            categoryId: category.id,
-            component: item.name,
-            componentId: item.id,
-            value1: val1 || '\u2014',
-            value2: val2 || '\u2014',
-            type: getDiffType(val1, val2)
-          });
-        }
+        diffs.push({
+          category: category.name,
+          categoryId: category.id,
+          component: item.name,
+          componentId: item.id,
+          value1: val1 || '\u2014',
+          value2: val2 || '\u2014',
+          type: getDiffType(val1, val2)
+        });
       });
     });
 
@@ -80,18 +78,15 @@
   // Determine diff type
   // val1 is from year1 (newer), val2 is from year2 (older)
   function getDiffType(val1, val2) {
+    if (!val1 && !val2) return 'unchanged';  // Both empty
     if (!val1) return 'removed';  // Missing in newer year = removed
     if (!val2) return 'added';    // Missing in older year = added
+    if (val1 === val2) return 'unchanged';   // Same value
     return 'changed';
   }
 
   // Render comparison results
   function renderResults(year1, year2, differences) {
-    if (differences.length === 0) {
-      resultsContainer.innerHTML = '<div class="p-8 text-center text-gray-500 dark:text-gray-400">No differences found between ' + year1 + ' and ' + year2 + '</div>';
-      return;
-    }
-
     let html = '<div class="overflow-x-auto"><table class="platform-table"><thead><tr>';
     html += '<th class="text-left">Category</th>';
     html += '<th class="text-left">Component</th>';
@@ -127,9 +122,10 @@
     html += '</tbody></table></div>';
 
     // Summary
+    var diffCount = differences.filter(function(d) { return d.type !== 'unchanged'; }).length;
     html += '<div class="mt-4 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg">';
     html += '<p class="text-sm text-gray-600 dark:text-gray-400">';
-    html += '<strong>' + differences.length + '</strong> difference' + (differences.length === 1 ? '' : 's') + ' found between ' + year1 + ' and ' + year2;
+    html += '<strong>' + diffCount + '</strong> difference' + (diffCount === 1 ? '' : 's') + ' found out of <strong>' + differences.length + '</strong> components';
     html += '</p></div>';
 
     resultsContainer.innerHTML = html;
